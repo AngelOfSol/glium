@@ -240,6 +240,12 @@ fn check_gl_compatibility(ctxt: CommandContext) -> Result<(), GliumCreationError
         {
             result.push("OpenGL implementation doesn't support stencil textures");
         }
+
+        if cfg!(feature = "gl_transform_feedback") && ctxt.version < &GlVersion(3, 0)
+            && !ctxt.extensions.gl_ext_transform_feedback
+        {
+            result.push("OpenGL implementation doesn't support transform feedback");
+        }
     }
 
     if result.len() == 0 {

@@ -22,6 +22,7 @@ gl_instancing = []
 gl_integral_textures = []
 gl_depth_textures = []
 gl_stencil_textures = []
+gl_transform_feedback = []
 headless = ["glutin/headless"]
 
 [dependencies.glutin]
