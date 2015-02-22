@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Version` struct in crate `glium`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Version">
+
+    <title>glium::Version - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>glium</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='debug/index.html' title=''>debug</a><a class='mod ' href='framebuffer/index.html' title='Framebuffers allow you to customize the color, depth and stencil buffers you will draw on.'>framebuffer</a><a class='mod ' href='index/index.html' title='In order to draw, you need to provide a source of indices which is used to link the vertices together into *primitives*.'>index</a><a class='mod ' href='index_buffer/index.html' title=''>index_buffer</a><a class='mod ' href='macros/index.html' title='Defines useful macros for glium usage.'>macros</a><a class='mod ' href='pixel_buffer/index.html' title='Pixel buffers are buffers that contain two-dimensional texture data.'>pixel_buffer</a><a class='mod ' href='program/index.html' title=''>program</a><a class='mod ' href='render_buffer/index.html' title='A render buffer is similar to a texture, but is optimized for usage as a draw target.'>render_buffer</a><a class='mod ' href='texture/index.html' title='A texture is an image loaded in video memory, which can be sampled in your shaders.'>texture</a><a class='mod ' href='uniforms/index.html' title='A uniform is a global variable in your program. In order to draw something, you will need to give `glium` the values of all your uniforms. Objects that implement the `Uniform` trait are  here to do that.'>uniforms</a><a class='mod ' href='vertex/index.html' title='Contains everything related to vertex buffers.'>vertex</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.BlitTarget.html' title='Area of a surface in pixels. Similar to a `Rect` except that dimensions can be negative.'>BlitTarget</a><a class='struct ' href='struct.Display.html' title='The main object of this library. Controls the whole display.'>Display</a><a class='struct ' href='struct.DrawParameters.html' title='Represents the parameters to use when drawing.'>DrawParameters</a><a class='struct ' href='struct.Frame.html' title='Implementation of `Surface`, targeting the default framebuffer.'>Frame</a><a class='struct ' href='struct.IndexBuffer.html' title='A list of indices loaded in the graphics card&#39;s memory.'>IndexBuffer</a><a class='struct ' href='struct.LinearSyncFence.html' title='Prototype for a `SyncFence`.'>LinearSyncFence</a><a class='struct ' href='struct.PollEventsIter.html' title='Iterator for all the events received by the window.'>PollEventsIter</a><a class='struct ' href='struct.Program.html' title='A combination of shaders linked together.'>Program</a><a class='struct ' href='struct.Rect.html' title='Area of a surface in pixels.'>Rect</a><a class='struct ' href='struct.SyncFence.html' title='Provides a way to wait for a server-side operation to be finished.'>SyncFence</a><a class='struct current' href='struct.Version.html' title='Describes a version.'>Version</a><a class='struct ' href='struct.VertexBuffer.html' title='A list of vertices loaded in the graphics card&#39;s memory.'>VertexBuffer</a><a class='struct ' href='struct.WaitEventsIter.html' title='Blocking iterator over all the events received by the window.'>WaitEventsIter</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.BackfaceCullingMode.html' title='Describes how triangles should be filtered before the fragment processing. Backface culling is purely an optimization. If you don&#39;t know what this does, just use `CullingDisabled`.'>BackfaceCullingMode</a><a class='enum ' href='enum.BlendingFunction.html' title='Function that the GPU will use for blending.'>BlendingFunction</a><a class='enum ' href='enum.DepthTest.html' title='The function that the GPU will use to determine whether to write over an existing pixel on the target.'>DepthTest</a><a class='enum ' href='enum.DrawError.html' title='Error that can happen while drawing.'>DrawError</a><a class='enum ' href='enum.GliumCreationError.html' title='Error that can happen while creating a glium display.'>GliumCreationError</a><a class='enum ' href='enum.LinearBlendingFactor.html' title='Indicates which value to multiply each component with.'>LinearBlendingFactor</a><a class='enum ' href='enum.PolygonMode.html' title='Defines how the device should render polygons.'>PolygonMode</a><a class='enum ' href='enum.ProgramCreationError.html' title='Error that can be triggered when creating a `Program`.'>ProgramCreationError</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.DisplayBuild.html' title='Objects that can build a `Display` object.'>DisplayBuild</a><a class='trait ' href='trait.GlObject.html' title='Trait for objects that are OpenGL objects.'>GlObject</a><a class='trait ' href='trait.Surface.html' title='Object that can be drawn upon.'>Surface</a></div><div class='block macro'><h2>Macros</h2><a class='macro ' href='macro.implement_vertex!.html' title='Implements the `glium::vertex::Vertex` trait for the given type.'>implement_vertex!</a><a class='macro ' href='macro.uniform!.html' title='Returns an implementation-defined type which implements the `Uniform` trait.'>uniform!</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>glium</a>::<wbr><a class='struct' href=''>Version</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-103680' href='../src/glium/version.rs.html#7'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Version(pub <a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>, pub <a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>);</pre><div class='docblock'><p>Describes a version.</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html' title='core::cmp::PartialOrd'>PartialOrd</a> for <a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a></code></h3><div class='impl-items'><h4 id='method.partial_cmp' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.partial_cmp' class='fnname'>partial_cmp</a>(&amp;self, other: &amp;<a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='http://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html' title='core::cmp::Ordering'>Ordering</a>&gt;</code></h4>
+<h4 id='method.lt' class='tymethod'><a class='stability Stable' title='Stable'></a><code>fn <a href='#tymethod.lt' class='fnname'>lt</a>(&amp;self, other: &amp;Rhs) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.le' class='tymethod'><a class='stability Stable' title='Stable'></a><code>fn <a href='#tymethod.le' class='fnname'>le</a>(&amp;self, other: &amp;Rhs) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.gt' class='tymethod'><a class='stability Stable' title='Stable'></a><code>fn <a href='#tymethod.gt' class='fnname'>gt</a>(&amp;self, other: &amp;Rhs) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ge' class='tymethod'><a class='stability Stable' title='Stable'></a><code>fn <a href='#tymethod.ge' class='fnname'>ge</a>(&amp;self, other: &amp;Rhs) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html' title='core::cmp::Ord'>Ord</a> for <a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a></code></h3><div class='impl-items'><h4 id='method.cmp' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.cmp' class='fnname'>cmp</a>(&amp;self, other: &amp;<a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html' title='core::cmp::Ordering'>Ordering</a></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a></code></h3><div class='impl-items'><h4 id='method.assert_receiver_is_total_eq' class='tymethod'><a class='stability Stable' title='Stable'></a><code>fn <a href='#tymethod.assert_receiver_is_total_eq' class='fnname'>assert_receiver_is_total_eq</a>(&amp;self)</code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a>) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a>) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a></code></h4>
+<h4 id='method.clone_from' class='tymethod'><a class='stability Unstable' title='Unstable: this function is rarely used'></a><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a></code></h3><div class='impl-items'></div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../glium/struct.Version.html' title='glium::Version'>Version</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "glium";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

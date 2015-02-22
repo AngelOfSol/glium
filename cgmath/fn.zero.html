@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `zero` fn in crate `cgmath`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, zero">
+
+    <title>cgmath::zero - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>cgmath</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Aabb2.html' title='A two-dimensional AABB, aka a rectangle.'>Aabb2</a><a class='struct ' href='struct.Aabb3.html' title='A three-dimensional AABB, aka a rectangular prism.'>Aabb3</a><a class='struct ' href='struct.AffineMatrix3.html' title='A homogeneous transformation matrix.'>AffineMatrix3</a><a class='struct ' href='struct.Basis2.html' title='A two-dimensional rotation matrix.'>Basis2</a><a class='struct ' href='struct.Basis3.html' title='A three-dimensional rotation matrix.'>Basis3</a><a class='struct ' href='struct.Cylinder.html' title=''>Cylinder</a><a class='struct ' href='struct.Decomposed.html' title='A generic transformation consisting of a rotation, displacement vector and scale amount.'>Decomposed</a><a class='struct ' href='struct.Deg.html' title='An angle, in degrees'>Deg</a><a class='struct ' href='struct.Frustum.html' title=''>Frustum</a><a class='struct ' href='struct.FrustumPoints.html' title=''>FrustumPoints</a><a class='struct ' href='struct.Line.html' title='A generic directed line segment from `origin` to `dest`.'>Line</a><a class='struct ' href='struct.Matrix2.html' title='A 2 x 2, column major matrix'>Matrix2</a><a class='struct ' href='struct.Matrix3.html' title='A 3 x 3, column major matrix'>Matrix3</a><a class='struct ' href='struct.Matrix4.html' title='A 4 x 4, column major matrix'>Matrix4</a><a class='struct ' href='struct.Obb2.html' title=''>Obb2</a><a class='struct ' href='struct.Obb3.html' title=''>Obb3</a><a class='struct ' href='struct.Ortho.html' title='An orthographic projection with arbitrary left/right/bottom/top distances'>Ortho</a><a class='struct ' href='struct.Perspective.html' title='A perspective projection with arbitrary left/right/bottom/top distances'>Perspective</a><a class='struct ' href='struct.PerspectiveFov.html' title='A perspective projection based on a vertical field-of-view angle.'>PerspectiveFov</a><a class='struct ' href='struct.Plane.html' title='A 3-dimensional plane formed from the equation: `A*x + B*y + C*z - D = 0`.'>Plane</a><a class='struct ' href='struct.Point2.html' title='A point in 2-dimensional space.'>Point2</a><a class='struct ' href='struct.Point3.html' title='A point in 3-dimensional space.'>Point3</a><a class='struct ' href='struct.Quaternion.html' title='A [quaternion](https://en.wikipedia.org/wiki/Quaternion) in scalar/vector form.'>Quaternion</a><a class='struct ' href='struct.Rad.html' title='An angle, in radians'>Rad</a><a class='struct ' href='struct.Ray.html' title='A generic ray starting at `origin` and extending infinitely in `direction`.'>Ray</a><a class='struct ' href='struct.Sphere.html' title=''>Sphere</a><a class='struct ' href='struct.Vector2.html' title=''>Vector2</a><a class='struct ' href='struct.Vector3.html' title=''>Vector3</a><a class='struct ' href='struct.Vector4.html' title=''>Vector4</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.Aabb.html' title=''>Aabb</a><a class='trait ' href='trait.Angle.html' title='Operations on angles.'>Angle</a><a class='trait ' href='trait.ApproxEq.html' title=''>ApproxEq</a><a class='trait ' href='trait.Array1.html' title='An array containing elements of type `Element`'>Array1</a><a class='trait ' href='trait.Array2.html' title='A column-major array'>Array2</a><a class='trait ' href='trait.BaseFloat.html' title='Base floating point types'>BaseFloat</a><a class='trait ' href='trait.BaseInt.html' title='Base integer types'>BaseInt</a><a class='trait ' href='trait.BaseNum.html' title='Base numeric types with partial ordering'>BaseNum</a><a class='trait ' href='trait.EuclideanVector.html' title='Specifies geometric operations for vectors. This is only implemented for 2-dimensional and 3-dimensional vectors.'>EuclideanVector</a><a class='trait ' href='trait.FixedArray.html' title='Homogeneous arrays of elements that can be converted to and from `[T, ..N]` arrays.'>FixedArray</a><a class='trait ' href='trait.Intersect.html' title=''>Intersect</a><a class='trait ' href='trait.Matrix.html' title=''>Matrix</a><a class='trait ' href='trait.One.html' title='Multiplicative neutral element'>One</a><a class='trait ' href='trait.PartialOrd.html' title='A trait providing a [partial ordering](http://mathworld.wolfram.com/PartialOrder.html).'>PartialOrd</a><a class='trait ' href='trait.Point.html' title='Specifies the numeric operations for point types.'>Point</a><a class='trait ' href='trait.Projection.html' title=''>Projection</a><a class='trait ' href='trait.Rotation.html' title='A trait for a generic rotation. A rotation is a transformation that creates a circular motion, and preserves at least one point in the space.'>Rotation</a><a class='trait ' href='trait.Rotation2.html' title='A two-dimensional rotation.'>Rotation2</a><a class='trait ' href='trait.Rotation3.html' title='A three-dimensional rotation.'>Rotation3</a><a class='trait ' href='trait.ToBasis2.html' title='Represents types which can be converted to a rotation matrix.'>ToBasis2</a><a class='trait ' href='trait.ToBasis3.html' title='Represents types which can be converted to a rotation matrix.'>ToBasis3</a><a class='trait ' href='trait.ToDeg.html' title='Represents types that can be converted to degrees.'>ToDeg</a><a class='trait ' href='trait.ToMatrix2.html' title='Represents types which can be converted to a Matrix2'>ToMatrix2</a><a class='trait ' href='trait.ToMatrix3.html' title='Represents types which can be converted to a Matrix3'>ToMatrix3</a><a class='trait ' href='trait.ToMatrix4.html' title='Represents types which can be converted to a Matrix4'>ToMatrix4</a><a class='trait ' href='trait.ToQuaternion.html' title='Represents types which can be expressed as a quaternion.'>ToQuaternion</a><a class='trait ' href='trait.ToRad.html' title='Represents types that can be converted to radians.'>ToRad</a><a class='trait ' href='trait.Transform.html' title='A trait representing an [affine transformation](https://en.wikipedia.org/wiki/Affine_transformation) that can be applied to points or vectors. An affine transformation is one which'>Transform</a><a class='trait ' href='trait.Transform3.html' title=''>Transform3</a><a class='trait ' href='trait.Vector.html' title='A trait that specifies a range of numeric operations for vectors. Not all of these make sense from a linear algebra point of view, but are included for pragmatic reasons.'>Vector</a><a class='trait ' href='trait.Zero.html' title='Additive neutral element'>Zero</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.acos.html' title=''>acos</a><a class='fn ' href='fn.asin.html' title=''>asin</a><a class='fn ' href='fn.atan.html' title=''>atan</a><a class='fn ' href='fn.atan2.html' title=''>atan2</a><a class='fn ' href='fn.bisect.html' title=''>bisect</a><a class='fn ' href='fn.cos.html' title=''>cos</a><a class='fn ' href='fn.cot.html' title=''>cot</a><a class='fn ' href='fn.csc.html' title=''>csc</a><a class='fn ' href='fn.deg.html' title='Create a new angle, in degrees'>deg</a><a class='fn ' href='fn.dot.html' title='Dot product of two vectors.'>dot</a><a class='fn ' href='fn.frustum.html' title='Create a perspective matrix from a view frustrum.'>frustum</a><a class='fn ' href='fn.one.html' title=''>one</a><a class='fn ' href='fn.ortho.html' title='Create an orthographic projection matrix.'>ortho</a><a class='fn ' href='fn.perspective.html' title='Create a perspective projection matrix.'>perspective</a><a class='fn ' href='fn.rad.html' title='Create a new angle, in radians'>rad</a><a class='fn ' href='fn.sec.html' title=''>sec</a><a class='fn ' href='fn.sin.html' title=''>sin</a><a class='fn ' href='fn.sin_cos.html' title=''>sin_cos</a><a class='fn ' href='fn.tan.html' title=''>tan</a><a class='fn ' href='fn.vec2.html' title='The short constructor.'>vec2</a><a class='fn ' href='fn.vec3.html' title='The short constructor.'>vec3</a><a class='fn ' href='fn.vec4.html' title='The short constructor.'>vec4</a><a class='fn current' href='fn.zero.html' title=''>zero</a></div><div class='block macro'><h2>Macros</h2><a class='macro ' href='macro.assert_approx_eq!.html' title=''>assert_approx_eq!</a><a class='macro ' href='macro.assert_approx_eq_eps!.html' title=''>assert_approx_eq_eps!</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content fn">
+<h1 class='fqn'><span class='in-band'>Function <a href='index.html'>cgmath</a>::<wbr><a class='fn' href=''>zero</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-39911' href='../src/cgmath/num.rs.html#137-139'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn zero&lt;T: <a class='trait' href='../cgmath/trait.Zero.html' title='cgmath::Zero'>Zero</a>&gt;() -&gt; T</pre></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "cgmath";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Program` struct in crate `glium`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Program">
+
+    <title>glium::Program - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>glium</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='debug/index.html' title=''>debug</a><a class='mod ' href='framebuffer/index.html' title='Framebuffers allow you to customize the color, depth and stencil buffers you will draw on.'>framebuffer</a><a class='mod ' href='index/index.html' title='In order to draw, you need to provide a source of indices which is used to link the vertices together into *primitives*.'>index</a><a class='mod ' href='index_buffer/index.html' title=''>index_buffer</a><a class='mod ' href='macros/index.html' title='Defines useful macros for glium usage.'>macros</a><a class='mod ' href='pixel_buffer/index.html' title='Pixel buffers are buffers that contain two-dimensional texture data.'>pixel_buffer</a><a class='mod ' href='program/index.html' title=''>program</a><a class='mod ' href='render_buffer/index.html' title='A render buffer is similar to a texture, but is optimized for usage as a draw target.'>render_buffer</a><a class='mod ' href='texture/index.html' title='A texture is an image loaded in video memory, which can be sampled in your shaders.'>texture</a><a class='mod ' href='uniforms/index.html' title='A uniform is a global variable in your program. In order to draw something, you will need to give `glium` the values of all your uniforms. Objects that implement the `Uniform` trait are  here to do that.'>uniforms</a><a class='mod ' href='vertex/index.html' title='Contains everything related to vertex buffers.'>vertex</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.BlitTarget.html' title='Area of a surface in pixels. Similar to a `Rect` except that dimensions can be negative.'>BlitTarget</a><a class='struct ' href='struct.Display.html' title='The main object of this library. Controls the whole display.'>Display</a><a class='struct ' href='struct.DrawParameters.html' title='Represents the parameters to use when drawing.'>DrawParameters</a><a class='struct ' href='struct.Frame.html' title='Implementation of `Surface`, targeting the default framebuffer.'>Frame</a><a class='struct ' href='struct.IndexBuffer.html' title='A list of indices loaded in the graphics card&#39;s memory.'>IndexBuffer</a><a class='struct ' href='struct.LinearSyncFence.html' title='Prototype for a `SyncFence`.'>LinearSyncFence</a><a class='struct ' href='struct.PollEventsIter.html' title='Iterator for all the events received by the window.'>PollEventsIter</a><a class='struct current' href='struct.Program.html' title='A combination of shaders linked together.'>Program</a><a class='struct ' href='struct.Rect.html' title='Area of a surface in pixels.'>Rect</a><a class='struct ' href='struct.SyncFence.html' title='Provides a way to wait for a server-side operation to be finished.'>SyncFence</a><a class='struct ' href='struct.Version.html' title='Describes a version.'>Version</a><a class='struct ' href='struct.VertexBuffer.html' title='A list of vertices loaded in the graphics card&#39;s memory.'>VertexBuffer</a><a class='struct ' href='struct.WaitEventsIter.html' title='Blocking iterator over all the events received by the window.'>WaitEventsIter</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.BackfaceCullingMode.html' title='Describes how triangles should be filtered before the fragment processing. Backface culling is purely an optimization. If you don&#39;t know what this does, just use `CullingDisabled`.'>BackfaceCullingMode</a><a class='enum ' href='enum.BlendingFunction.html' title='Function that the GPU will use for blending.'>BlendingFunction</a><a class='enum ' href='enum.DepthTest.html' title='The function that the GPU will use to determine whether to write over an existing pixel on the target.'>DepthTest</a><a class='enum ' href='enum.DrawError.html' title='Error that can happen while drawing.'>DrawError</a><a class='enum ' href='enum.GliumCreationError.html' title='Error that can happen while creating a glium display.'>GliumCreationError</a><a class='enum ' href='enum.LinearBlendingFactor.html' title='Indicates which value to multiply each component with.'>LinearBlendingFactor</a><a class='enum ' href='enum.PolygonMode.html' title='Defines how the device should render polygons.'>PolygonMode</a><a class='enum ' href='enum.ProgramCreationError.html' title='Error that can be triggered when creating a `Program`.'>ProgramCreationError</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.DisplayBuild.html' title='Objects that can build a `Display` object.'>DisplayBuild</a><a class='trait ' href='trait.GlObject.html' title='Trait for objects that are OpenGL objects.'>GlObject</a><a class='trait ' href='trait.Surface.html' title='Object that can be drawn upon.'>Surface</a></div><div class='block macro'><h2>Macros</h2><a class='macro ' href='macro.implement_vertex!.html' title='Implements the `glium::vertex::Vertex` trait for the given type.'>implement_vertex!</a><a class='macro ' href='macro.uniform!.html' title='Returns an implementation-defined type which implements the `Uniform` trait.'>uniform!</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>glium</a>::<wbr><a class='struct' href=''>Program</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-7245' href='../src/glium/program/program.rs.html#99-108'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Program {
+    // some fields omitted
+}</pre><div class='docblock'><p>A combination of shaders linked together.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='struct' href='../glium/struct.Program.html' title='glium::Program'>Program</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new' class='fnname'>new</a>&lt;'a, I&gt;(display: &amp;<a class='struct' href='../glium/struct.Display.html' title='glium::Display'>Display</a>, input: I) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../glium/struct.Program.html' title='glium::Program'>Program</a>, <a class='enum' href='../glium/enum.ProgramCreationError.html' title='glium::ProgramCreationError'>ProgramCreationError</a>&gt; <span class='where'>where I: <a class='trait' href='../glium/program/trait.IntoProgramCreationInput.html' title='glium::program::IntoProgramCreationInput'>IntoProgramCreationInput</a>&lt;'a&gt;</span></code></h4>
+<div class='docblock'><p>Builds a new program.</p>
+</div><h4 id='method.from_source' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.from_source' class='fnname'>from_source</a>&lt;'a&gt;(display: &amp;<a class='struct' href='../glium/struct.Display.html' title='glium::Display'>Display</a>, vertex_shader: &amp;'a <a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, fragment_shader: &amp;'a <a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, geometry_shader: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../glium/struct.Program.html' title='glium::Program'>Program</a>, <a class='enum' href='../glium/enum.ProgramCreationError.html' title='glium::ProgramCreationError'>ProgramCreationError</a>&gt;</code></h4>
+<div class='docblock'><p>Builds a new program from GLSL source code.</p>
+
+<p>A program is a group of shaders linked together.</p>
+
+<h1 id="parameters" class='section-header'><a
+                           href="#parameters">Parameters</a></h1>
+<ul>
+<li><code>vertex_shader</code>: Source code of the vertex shader.</li>
+<li><code>fragment_shader</code>: Source code of the fragment shader.</li>
+<li><code>geometry_shader</code>: Source code of the geometry shader.</li>
+</ul>
+
+<h1 id="example" class='section-header'><a
+                           href="#example">Example</a></h1><pre id='rust-example-rendered' class='rust '>
+<span class='kw'>let</span> <span class='ident'>program</span> <span class='op'>=</span> <span class='ident'>glium</span>::<span class='ident'>Program</span>::<span class='ident'>from_source</span>(<span class='kw-2'>&amp;</span><span class='ident'>display</span>, <span class='ident'>vertex_source</span>, <span class='ident'>fragment_source</span>,
+    <span class='prelude-val'>Some</span>(<span class='ident'>geometry_source</span>));
+</pre>
+</div><h4 id='method.get_binary' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_binary' class='fnname'>get_binary</a>(&amp;self) -&gt; <a class='struct' href='../glium/program/struct.Binary.html' title='glium::program::Binary'>Binary</a></code></h4>
+<div class='docblock'><p>Returns the program&#39;s compiled binary.</p>
+
+<p>You can store the result in a file, then reload it later. This avoids having to compile
+the source code every time.</p>
+
+<h2 id="features" class='section-header'><a
+                           href="#features">Features</a></h2>
+<p>Only available if the <code>gl_program_binary</code> feature is enabled.</p>
+</div><h4 id='method.get_binary_if_supported' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_binary_if_supported' class='fnname'>get_binary_if_supported</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../glium/program/struct.Binary.html' title='glium::program::Binary'>Binary</a>&gt;</code></h4>
+<div class='docblock'><p>Returns the program&#39;s compiled binary.</p>
+
+<p>Same as <code>get_binary</code> but always available. Returns <code>None</code> if the backend doesn&#39;t support
+getting or reloading the program&#39;s binary.</p>
+</div><h4 id='method.get_frag_data_location' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_frag_data_location' class='fnname'>get_frag_data_location</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>&gt;</code></h4>
+<div class='docblock'><p>Returns the <em>location</em> of an output fragment, if it exists.</p>
+
+<p>The <em>location</em> is low-level information that is used internally by glium.
+You probably don&#39;t need to call this function.</p>
+
+<p>You can declare output fragments in your shaders by writing:</p>
+
+<pre><code class="language-notrust">out vec4 foo;
+</code></pre>
+</div><h4 id='method.get_uniform' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_uniform' class='fnname'>get_uniform</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../glium/program/struct.Uniform.html' title='glium::program::Uniform'>Uniform</a>&gt;</code></h4>
+<div class='docblock'><p>Returns informations about a uniform variable, if it exists.</p>
+</div><h4 id='method.get_uniform_blocks' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_uniform_blocks' class='fnname'>get_uniform_blocks</a>(&amp;self) -&gt; &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>, <a class='struct' href='../glium/program/struct.UniformBlock.html' title='glium::program::UniformBlock'>UniformBlock</a>, <a class='struct' href='http://doc.rust-lang.org/nightly/std/collections/hash/state/struct.DefaultState.html' title='std::collections::hash::state::DefaultState'>DefaultState</a>&lt;FnvHasher&gt;&gt;</code></h4>
+<div class='docblock'><p>Returns a list of uniform blocks.</p>
+</div><h4 id='method.get_transform_feedback_varyings' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_transform_feedback_varyings' class='fnname'>get_transform_feedback_varyings</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='../glium/program/struct.TransformFeedbackVarying.html' title='glium::program::TransformFeedbackVarying'>TransformFeedbackVarying</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></h4>
+<div class='docblock'><p>Returns the list of transform feedback varyings.</p>
+</div><h4 id='method.get_transform_feedback_mode' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_transform_feedback_mode' class='fnname'>get_transform_feedback_mode</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../glium/program/enum.TransformFeedbackMode.html' title='glium::program::TransformFeedbackMode'>TransformFeedbackMode</a>&gt;</code></h4>
+<div class='docblock'><p>Returns the mode used for transform feedback, or <code>None</code> is transform feedback is not
+enabled in this program or not supported.</p>
+</div><h4 id='method.has_tessellation_shaders' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.has_tessellation_shaders' class='fnname'>has_tessellation_shaders</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns true if the program contains a tessellation stage.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../glium/struct.Program.html' title='glium::Program'>Program</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.fmt' class='fnname'>fmt</a>(&amp;self, formatter: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Error.html' title='core::fmt::Error'>Error</a>&gt;</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='../glium/trait.GlObject.html' title='glium::GlObject'>GlObject</a> for <a class='struct' href='../glium/struct.Program.html' title='glium::Program'>Program</a></code></h3><div class='impl-items'><h4 id='assoc_type.Id' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Id = Handle</code></h4>
+<h4 id='method.get_id' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.get_id' class='fnname'>get_id</a>(&amp;self) -&gt; Handle</code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../glium/struct.Program.html' title='glium::Program'>Program</a></code></h3><div class='impl-items'><h4 id='method.drop' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "glium";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
